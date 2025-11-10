@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelajari GDScript - Dari Dasar Hingga Mahir</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            width: 200px;
+            float: left;
+            background-color: #333;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin-bottom: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        main {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .code-example {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .try-it {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .try-it:hover {
+            background-color: #45a049;
+        }
+        footer {
+            clear: both;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pelajari GDScript dari Dasar Hingga Mahir</h1>
+        <p>Situs ini seperti W3Schools, tapi khusus untuk GDScript. Kami jelaskan dengan bahasa Indonesia yang mudah dipahami untuk pemula.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('intro')">Pengantar GDScript</a></li>
+            <li><a href="#" onclick="showSection('variables')">Variabel dan Tipe Data</a></li>
+            <li><a href="#" onclick="showSection('operators')">Operator</a></li>
+            <li><a href="#" onclick="showSection('control')">Kontrol Aliran</a></li>
+            <li><a href="#" onclick="showSection('functions')">Fungsi</a></li>
+            <li><a href="#" onclick="showSection('arrays')">Array</a></li>
+            <li><a href="#" onclick="showSection('dictionaries')">Dictionary</a></li>
+            <li><a href="#" onclick="showSection('classes')">Class dan Object</a></li>
+            <li><a href="#" onclick="showSection('nodes')">Node dan Scene</a></li>
+            <li><a href="#" onclick="showSection('input')">Input dan Output</a></li>
+            <li><a href="#" onclick="showSection('advanced')">Topik Lanjutan</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div id="intro" class="section active">
+            <h2>Pengantar GDScript</h2>
+            <p>GDScript adalah bahasa pemrograman yang digunakan di Godot Engine. Ini seperti Python, tapi khusus untuk membuat game. GDScript mudah dipelajari karena sintaksnya sederhana.</p>
+            <p>Untuk mulai, buat script baru di Godot dan tulis kode di sana. Contoh sederhana:</p>
+            <div class="code-example">
+extends Node<br><br>
+func _ready():<br>
+    print("Halo, dunia!")
+            </div>
+            <button class="try-it" onclick="alert('Coba jalankan di Godot!')">Coba Jalankan</button>
+        </div>
+        
+        <div id="variables" class="section">
+            <h2>Variabel dan Tipe Data</h2>
+            <p>Variabel adalah tempat menyimpan data. Di GDScript, kita pakai var untuk mendeklarasikan variabel. Tipe data seperti int (bilangan bulat), float (bilangan desimal), String (teks), bool (benar/salah).</p>
+            <p>Contoh:</p>
+            <div class="code-example">
+var nama = "John"  # String<br>
+var umur = 25      # int<br>
+var tinggi = 1.75  # float<br>
+var aktif = true   # bool
+            </div>
+            <button class="try-it" onclick="alert('Coba ubah nilai variabel di Godot!')">Coba Jalankan</button>
+        </div>
+        
+        <div id="operators" class="section">
+            <h2>Operator</h2>
+            <p>Operator digunakan untuk melakukan operasi matematika atau logika. Misalnya + untuk tambah, - untuk kurang, == untuk bandingkan sama.</p>
+            <p>Contoh:</p>
+            <div class="code-example">
+var a = 5<br>
+var b = 3<br>
+var hasil = a + b  # hasil = 8<br>
+if a > b:<br>
+    print("a lebih besar")
+            </div>
+            <button class="try-it" onclick="alert('Coba hitung sendiri!')">Coba Jalankan</button>
+        </div>
+        
+        <div id="control" class="section">
+            <h2>Kontrol Aliran</h2>
+            <p>Kontrol aliran seperti if-else untuk memutuskan apa yang dilakukan, dan loop seperti for atau while untuk mengulang.</p>
+            <p>Contoh if:</p>
+            <div class="code-example">
+if umur >= 18:<br>
+    print("Dewasa")<br>
+else:<br>
+    print("Anak-anak")
+            </div>
+            <p>Contoh loop:</p>
+            <div class="code-example">
+for i in range(5):<br>
+    print(i)  # Cetak 0 sampai 4
+            </div>
+            <button class="try-it" onclick="alert('Coba ubah kondisi!')">Coba Jalankan</button>
+        </div>
+        
+        <div id="functions" class="section">
+            <h2>Fungsi</h2>
+            <p>Fungsi adalah blok kode yang bisa dipanggil berulang. Gunakan func untuk membuatnya.</p>
+            <p>Contoh:</p>
+            <div class="code-example">
+func sapa(nama):<br>
+    return "Halo, " + nama<br><br>
+print(sapa("Alice"))  # Cetak "Halo, Alice"
+            </div>
+            <button class="try-it" onclick="alert('Coba buat fungsi sendiri!')">Coba Jalankan</button>
+        </div>
+        
+        <div id="arrays" class="section">
+            <h2>Array</h2>
+            <p>Array adalah daftar nilai. Di GDScript, array bisa menyimpan berbagai tipe data.</p>
+            <p>Contoh:</p>
+            <div class="code-example">
+var buah = ["apel", "pisang", "jeruk"]<br>
+print(buah[0])  # Cetak "apel"<br>
+buah.append("mangga")  # Tambah item
+            </div>
+            <button class="try-it" onclick="alert('Coba akses array!')">Coba Jalankan</button>
+        </div>
+        
+        <div id="dictionaries" class="section">
+            <h2>Dictionary</h2>
+            <p>Dictionary adalah struktur data yang menyimpan pasangan kunci-nilai. Berguna untuk data seperti nama dan nilai.</p>
+            <p>Contoh:</p>
+            <div class="code-example">
+var orang = {"nama": "John", "umur": 30}<br>
+print(orang["nama"])  # Cetak "John"<br>
+orang["pekerjaan"] = "Programmer"  # Tambah kunci baru
+            </div>
+            <button class="try-it" onclick="alert('Coba ubah dictionary!')">Coba Jalankan</button>
+        </div>
+        
+        <div id="classes" class="section">
+            <h2>Class dan Object</h2>
+            <p>Class adalah blueprint untuk membuat object. Di GDScript, gunakan class untuk mendefinisikan.</p>
+            <p>Contoh:</p>
+            <div class="code-example">
+class Mobil:<br>
+    var warna<br>
+    func _init(w):<br>
+        warna = w<br><br>
+var mobil1 = Mobil.new("merah")<br>
+print(mobil1.warna)  # Cetak "merah"
+            </div>
+            <button class="try-it" onclick="alert('Coba buat class!')">Coba Jalankan</button>
+        </div>
+        
+        <div id="nodes" class="section">
+            <h2>Node dan Scene</h2>
+            <p>Di Godot, segalanya adalah Node. Scene adalah kumpulan node. Gunakan get_node() untuk akses node lain.</p>
+            <p>Contoh:</p>
+            <div class="code-example">
+extends Node2D<br><br>
+func _ready():<br>
+    var label = get_node("Label")<br>
+    label.text = "Halo dari script!"
+            </div>
+            <button class="try-it" onclick="alert('Coba di scene Godot!')">Coba Jalankan</button>
+        </div>
+        
+        <div id="input" class="section">
+            <h2>Input dan Output</h2>
+            <p>Input dari pemain pakai Input.is_action_pressed(). Output pakai print() atau ubah UI.</p>
+            <p>Contoh:</p>
+            <div class="code-example">
+func _process(delta):<br>
+    if Input.is_action_pressed("ui_right"):<br>
+        print("Gerak kanan")
+            </div>
+            <button class="try-it" onclick="alert('Coba input di game!')">Coba Jalankan</button>
+        </div>
+        
+        <div id="advanced" class="section">
+            <h2>Topik Lanjutan</h2>
+            <p>Topik lanjutan termasuk signals, inheritance, dan export. Signals untuk komunikasi antar node.</p>
+            <p>Contoh signals:</p>
+            <div class="code-example">
+signal skor_berubah<br><br>
+func tambah_skor():<br>
+    emit_signal("skor_berubah")
+            </div>
+            <p>Selamat! Kamu sudah belajar dasar GDScript. Lanjutkan eksplorasi di Godot.</p>
+            <button class="try-it" onclick="alert('Coba signals!')">Coba Jalankan</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Pelajari GDScript. Dibuat untuk pemula.</p>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            // Sembunyikan semua section
+            var sections = document.querySelectorAll('.section');
+            sections.forEach(function(sec) {
+                sec.classList.remove('active');
+            });
+            // Tampilkan section yang dipilih
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
